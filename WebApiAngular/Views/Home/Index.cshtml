@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="contactsModule">
+ 
+<head> 
+    <script src="~/Scripts/angular.min.js"></script>
+    <link href="~/Content/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="contactsController">
+        <input type="text" ng-model="Id" hidden="hidden" />
+        <input type="text" ng-model="Firstname" placeholder="First name" />
+        <input type="text" ng-model="Secondname" placeholder="Second name" />
+        <input type="text" ng-model="Email" placeholder="Email" />
+        <input type="text" ng-model="Phone"placeholder="Phone" />        
+        <input type="button" id="save" value="Save" ng-click="save()" />
+        <input type="button" id="delete" value="Delete" ng-click="delete()" ng-show="Id" />
+        <input type="button" id="save" value="Cancel" ng-click="cancel()"  ng-show="Firstname" />
+        <br />
+        {{"Number of contact(s): "}} {{ContactsQuantity}}
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>First name</th>
+                    <th>Second name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="contact in Contacts" ng-click="get(contact)">
+                <td>{{ contact.Id }}</td>
+                <td>{{ contact.Firstname }}</td>
+                <td>{{ contact.Secondname }}</td>
+                <td>{{ contact.Email }}</td>
+                <td>{{ contact.Phone }}</td>
+            </tr>
+        </table>        
+    </div>
+    <script src="~/Scripts/web/module.js"></script>
+    <script src="~/Scripts/web/service.js"></script>
+    <script src="~/Scripts/web/controller.js"></script>
+</body>
+</html>
+     
+

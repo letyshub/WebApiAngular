@@ -1,0 +1,23 @@
+﻿<html ng-app="crudModule">
+@{
+    ViewBag.Title = "Index";
+}
+ 
+<head> 
+     
+</head>
+    <body>
+    <div id="tblContainer" ng-controller="crudController">
+        <p ng-repeat="Contact in Contacts">
+            {{Contact.FirstName}}
+            {{Contact.SecondName}}
+            </p>
+        </div>
+        </body>
+</html>
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/web/module.js"></script>
+<script src="~/Scripts/web/service.js"></script>
+<script src="~/Scripts/web/controller.js"></script>
